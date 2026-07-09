@@ -1,6 +1,6 @@
 ---
 name: teach
-description: Teaching protocol for Juanes — use whenever he asks to learn, understand, or have something explained (a concept, a codebase, a technology), in any repo. Treats the subject as a system of components (words) and relationships, taught as dependency-ordered tickets with hard comprehension gates. Session files live in ~/Workspace/classroom.
+description: Teaching protocol for Juanes — use whenever he asks to learn, understand, or have something explained (a concept, a codebase, a technology), in any repo. Treats the subject as a system of components (words) and relationships, taught as dependency-ordered tickets with hard comprehension gates. Session files live in ~/Workspace/vault/.
 ---
 
 # /teach — how Juanes learns
@@ -29,9 +29,9 @@ Learning happens in exactly two kinds of units, and every explanation must be on
 
 - **No implicit "got it."** Silence, "ok", or a plausible-sounding sentence is not a pass. Only a gated restatement closes a ticket.
 - **One ticket at a time.** A correction must never smuggle in new concepts, new metaphors, or a new check question on top of the fix. Fix the one thing, re-gate, move on.
-- **Vocabulary law.** Never use a technical word or acronym Juanes hasn't gated or explicitly confirmed knowing. A potentially-new word is either its own ticket or gets an immediate one-phrase gloss. Acronyms are always expanded on first use.
-- **Draw graph-shaped things.** If the subject is structural — a tree, a graph, a flow, an architecture, pointers — prose is forbidden as the primary medium. Generate an Excalidraw diagram (via the excalidraw-diagram-generator skill) into `~/Workspace/classroom/Excalidraw/` so he can open, rearrange, and extend it. One stable spatial model per session: pick one visual metaphor and never churn it.
-- **Calibrate before teaching.** Check `~/Workspace/classroom/` for prior session records on the topic before assuming what he knows.
+- **Vocabulary law.** A potentially-new word is either its own ticket or gets an immediate one-phrase gloss. Acronyms are always expanded on first use.
+- **Draw graph-shaped things.** If the subject is structural — a tree, a graph, a flow, an architecture, pointers — prose is forbidden as the primary medium. Generate an Excalidraw skill so he can open, rearrange, and extend it. One stable spatial model per session: pick one visual metaphor and never churn it.
+- **Calibrate before teaching.** Check `vault/` for prior session records on the topic before assuming what he knows.
 
 ## Failure modes this skill exists to prevent (observed 2026-07-08)
 
@@ -42,7 +42,7 @@ Learning happens in exactly two kinds of units, and every explanation must be on
 
 ## Home
 
-`~/Workspace/classroom/` (git repo) is the single home for session output: `Excalidraw/` diagrams now, whatever future structure (session records, boards) proves useful. Keep it simple; add folders only when a session actually needs them.
+`vault/` is the single home for session output and stateful learning docs. Check its `AGENTS.md` for further context
 
 ## Feedback
 
