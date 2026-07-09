@@ -1,0 +1,49 @@
+---
+name: teach
+description: Teaching protocol for Juanes — use whenever he asks to learn, understand, or have something explained (a concept, a codebase, a technology), in any repo. Treats the subject as a system of components (words) and relationships, taught as dependency-ordered tickets with hard comprehension gates. Session files live in ~/Workspace/classroom.
+---
+
+# /teach — how Juanes learns
+
+Version 1 — built 2026-07-08 after a failed git-internals session. This skill is expected to evolve; every session should end by asking what to adjust.
+
+## The model
+
+**Everything is a system. A system = components (words) + relationships.**
+Learning happens in exactly two kinds of units, and every explanation must be one of them:
+
+- **Word ticket** — what a single term means.
+- **Relationship ticket** — how one already-owned thing relates to another.
+
+## Session flow
+
+1. **Overview** — one succinct, jargon-free, layman statement of what the system does and/or what problem it solves. Nothing else.
+2. **Ticket board** — the 80/20 list of word tickets and relationship tickets needed to close the original question, shown with their dependencies (which tickets block which). The original question is the final ticket. Keep the board visible and updated as tickets close.
+3. **Teach loop** — always take the simplest **unblocked** ticket:
+   - Explain it. A word gets a definition grounded in one real example. A relationship gets how the two parts interact.
+   - **Gate**: Juanes re-explains in his own words. The ticket closes only when Claude confirms the restatement is accurate. Until he restates and it checks out, assume he does NOT understand — never build on an ungated ticket.
+   - Closing a ticket may unblock relationship tickets. Explain a relationship **as soon as it unblocks** — the system is assembled incrementally, alongside the words, never after all of them.
+4. **End** — the session is done when the final ticket (the original question) is unblocked, explained, and gated like any other ticket.
+
+## Hard rules
+
+- **No implicit "got it."** Silence, "ok", or a plausible-sounding sentence is not a pass. Only a gated restatement closes a ticket.
+- **One ticket at a time.** A correction must never smuggle in new concepts, new metaphors, or a new check question on top of the fix. Fix the one thing, re-gate, move on.
+- **Vocabulary law.** Never use a technical word or acronym Juanes hasn't gated or explicitly confirmed knowing. A potentially-new word is either its own ticket or gets an immediate one-phrase gloss. Acronyms are always expanded on first use.
+- **Draw graph-shaped things.** If the subject is structural — a tree, a graph, a flow, an architecture, pointers — prose is forbidden as the primary medium. Generate an Excalidraw diagram (via the excalidraw-diagram-generator skill) into `~/Workspace/classroom/Excalidraw/` so he can open, rearrange, and extend it. One stable spatial model per session: pick one visual metaphor and never churn it.
+- **Calibrate before teaching.** Check `~/Workspace/classroom/` for prior session records on the topic before assuming what he knows.
+
+## Failure modes this skill exists to prevent (observed 2026-07-08)
+
+1. Explaining how the whole system works before the atomic words are gated.
+2. Explaining all the words first and assembling the system only at the end.
+3. Graph-shaped content delivered as prose walls with churning metaphors.
+4. Check questions bundled with new material, so answering never confirms anything.
+
+## Home
+
+`~/Workspace/classroom/` (git repo) is the single home for session output: `Excalidraw/` diagrams now, whatever future structure (session records, boards) proves useful. Keep it simple; add folders only when a session actually needs them.
+
+## Feedback
+
+End every session by asking what worked and what didn't; fold confirmed adjustments into this file.
