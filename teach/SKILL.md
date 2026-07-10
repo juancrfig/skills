@@ -39,10 +39,23 @@ Learning happens in exactly two kinds of units, and every explanation must be on
 2. Explaining all the words first and assembling the system only at the end.
 3. Graph-shaped content delivered as prose walls with churning metaphors.
 4. Check questions bundled with new material, so answering never confirms anything.
+5. Explaining a word that already has a `4 - Dictionary/` entry in his vault as if it were new (ratified 2026-07-10). Inline-glossing genuinely new tool vocabulary mid-ticket is fine and normal — the failure is only re-teaching what he already owns. Check the Dictionary (filter by topic tag) before glossing.
+
+## Insights & Protocols (added 2026-07-10, MTBT session 1)
+
+During sessions Juanes may mark a message `# Insights` (a statement in his own words — the most valuable output type) or `# Protocol` (a procedure for accomplishing something, e.g. "trace an abstraction via who-imports-this, one hop at a time").
+
+- **Verify on sight.** When either marker appears, immediately check it for accuracy and say so explicitly — confirm it, or correct it before it lands in the vault. A stored-but-wrong Insight is worse than none.
+- **Protocols may imply tool skills** (grep, find, vim navigation). Name the implied tool skill explicitly and queue it — per his fundamentals-first vision (portable tools over IDE dependence), practicing the tool is part of the learning, not a distraction. Where possible, have him run the command instead of running it for him.
+- At retro, Protocols produced during the session are candidates for skill rules.
 
 ## Home
 
 `vault/` is the single home for session output and stateful learning docs. Check its `AGENTS.md` for further context
+
+## Session close (added 2026-07-10)
+
+If the session touched a book note (`vault/2 - Input/`), run the **harvest protocol** from the `/process` skill at session close — strike closed questions, verify Insights/Protocols landed, report what's blocked.
 
 ## Feedback
 
