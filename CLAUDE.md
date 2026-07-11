@@ -1,25 +1,55 @@
-# About Juanes
+# CLAUDE.md
 
-Juanes is training to be a DevOps engineer.
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-## Fundamentals-first learning vision
+# This repository: `skills`
 
-Juanes wants to master portable, always-available tools — vim/neovim built-ins, grep, find, core Linux/shell commands — rather than depend on apps like VS Code, IDE plugins, or personal dotfiles.
+A collection of Claude Code skills (slash commands) used across all of Juanes' projects, plus the tooling to install them.
 
-**Why:** Servers he'll administer in his DevOps career won't have his dotfiles or GUI editors installed; fluency with universal tools is the durable skill.
+## What a skill is
 
-**How to apply:** In every session, when a task involves navigating/searching code or files, prefer or show the portable-tool way (grep/find/vim motions) over editor-specific features. When a protocol he's learning implies a tool skill (e.g. "trace imports" → grep), name the tool skill explicitly as something to practice.
+Each subdirectory with a `SKILL.md` is a skill. The frontmatter (`name`, `description`) tells Claude Code how to register and invoke it. The body of `SKILL.md` is the instruction set executed when the skill runs.
 
-## Study session conventions: Insights & Protocols
+Skills are registered globally by symlinking each skill directory into `~/.claude/skills/<name>`. They are then available as `/name` in any Claude Code session.
 
-During study/learning sessions, Juanes marks messages with headers:
-- `# Insights` — statements in his own words distilling understanding. The most valuable kind of output.
-- `# Protocol` — procedures for accomplishing something (e.g. "trace an abstraction by asking who-imports-this, one hop at a time").
+## Installation
 
-**Why:** Insights and Protocols are the actionable end products of his reading/study pipeline; a stored-but-wrong insight is worse than none.
+```bash
+./init.sh
+# or, to also link vault project memory:
+./init.sh --vault-path /path/to/vault
+```
 
-**How to apply:** Whenever a message marked Insights/Protocol appears, in any repo, immediately check it for accuracy and say so explicitly — confirm or correct it before treating it as settled. Treat proposed Protocols as candidates for skill rules at retro time.
+`init.sh` symlinks:
+- `soul/CLAUDE.md` → `~/.claude/CLAUDE.md` (Juanes' personal profile, injected into every session globally)
+- `memory/` → `~/.claude/projects/<vault-slug>/memory/` (persistent memory for vault sessions)
+- Each `<skill>/` with a `SKILL.md` → `~/.claude/skills/<skill>/`
 
-## Second brain: the `vault` repo
+## Skills in this repo
 
-Juanes keeps a personal Zettelkasten-style vault at `github.com/juancrfig/vault` — his second brain. It holds journals, ideas, writings, essays, notes, and reflections built up over time, and is a rich source of context on him: learning progress, feedback reports, in-flight thinking, and general personal/technical context beyond the 80/20 facts here. If a task would benefit from deeper context on Juanes, check that repo (see its `AGENTS.md` for structure) rather than assuming this file is exhaustive.
+| Skill | Purpose |
+|---|---|
+| `caveman` | Ultra-compressed response mode (~75% fewer tokens). Trigger: "caveman mode" or `/caveman`. Off: "stop caveman". |
+| `grilling` | Relentless one-question-at-a-time design interview to stress-test a plan. |
+| `grill-me` | Alias that invokes `/grilling`. |
+| `grill-with-docs` | Grilling session that also writes ADRs and a glossary via `/domain-modeling`. |
+| `handoff` | Compacts the current conversation into a handoff doc for a fresh agent. |
+| `process` | Book-note harvest protocol — runs after study sessions to strike closed questions, verify Insights/Protocols landed. Also invoked by `/teach` at session close. |
+| `teach` | Structured learning protocol (word tickets + relationship tickets, hard comprehension gates). Used when Juanes asks to learn something. |
+| `software-architecture` | Codebase analysis through software-design concepts Juanes has mastered; anchored to real code, never abstract. |
+| `excalidraw-diagram-generator` | Generates Excalidraw diagrams from templates and scripts. |
+
+## `skills-lock.json`
+
+Tracks externally sourced skills (from GitHub repos like `mattpocock/skills`, `github/awesome-copilot`) with their source path and content hash. Update this file when pulling in or pinning a new external skill.
+
+## Key relationships between skills
+
+- `/teach` → calls `/process` at session close when a book note was touched.
+- `/process` → the harvest step; `process/SKILL.md` is the single source of truth for book-note section semantics (not `vault/Templates/book.md`).
+- `/software-architecture` → follows `/teach`'s gating protocol; reads Juanes' mastered concepts live from `vault/` before each session.
+- `/grill-me` and `/grill-with-docs` → thin wrappers over `/grilling`.
+
+## `memory/`
+
+Persistent project-scoped memories for vault sessions. Linked into Claude Code's project memory path for the vault checkout. Currently empty; grows as sessions produce memorable facts.

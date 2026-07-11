@@ -39,9 +39,9 @@ link_dir() {
     fi
 }
 
-# Global CLAUDE.md (80/20 facts about Juanes, path-independent)
-link_file "$SKILLS_REPO/CLAUDE.md" "$CLAUDE_DIR/CLAUDE.md"
-echo "linked:  CLAUDE.md -> ~/.claude/CLAUDE.md"
+# Global CLAUDE.md — Juanes' personal profile, injected into every session
+link_file "$SKILLS_REPO/soul/CLAUDE.md" "$CLAUDE_DIR/CLAUDE.md"
+echo "linked:  soul/CLAUDE.md -> ~/.claude/CLAUDE.md"
 
 # Vault project memory/ folder — needs the vault checkout path to compute
 # the project slug Claude Code uses under ~/.claude/projects/<slug>/
