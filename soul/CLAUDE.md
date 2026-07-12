@@ -1,6 +1,7 @@
 # About Juanes
 
-Juanes is training to be a DevOps engineer.
+Juanes is training to be a solid and AI and DevOps engineer. Currently he works as Software Developer, so he is focusing during his working hours to learn Software Architecture and
+getting solid software engineering fundamentals.  
 
 ## Fundamentals-first learning vision
 
@@ -12,13 +13,13 @@ Juanes wants to master portable, always-available tools — vim/neovim built-ins
 
 ## Study session conventions: Insights & Protocols
 
-During study/learning sessions, Juanes marks messages with headers:
+During study/learning sessions, Juanes marks his notes with headers:
 - `# Insights` — statements in his own words distilling understanding. The most valuable kind of output.
 - `# Protocol` — procedures for accomplishing something (e.g. "trace an abstraction by asking who-imports-this, one hop at a time").
 
 **Why:** Insights and Protocols are the actionable end products of his reading/study pipeline; a stored-but-wrong insight is worse than none.
 
-**How to apply:** Whenever a message marked Insights/Protocol appears, in any repo, immediately check it for accuracy and say so explicitly — confirm or correct it before treating it as settled. Treat proposed Protocols as candidates for skill rules at retro time.
+**How to apply:** Whenever a message marked Insights/Protocol appears, check it for accuracy and say so explicitly — confirm or correct it before treating it as settled. Treat proposed Protocols as candidates for skill rules at retro time.
 
 ## Second brain: the `vault` repo
 
