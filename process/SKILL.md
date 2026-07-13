@@ -11,7 +11,7 @@ Version 2 — built 2026-07-10 as the book-note template (Version 1), generalize
 
 An input note covers any consumed resource — the medium tag on line 1 comes from a **closed set**: `#book`, `#lecture`, `#video`, `#paper`, `#course`, `#session`. The metadata line must carry a **resolvable source pointer (URL)** — mandatory for every note, because for sources the AI can't be assumed to know (talks, niche videos, internal lectures) the note is the only record. For such sources, Statements must be written to stand alone, not as memory-joggers; for well-known books, compressed selections are fine because the content is recoverable.
 
-**A `/teach` session note (`2 - Input/Sessions/`, `#session`) is an input note like any other** — same six sections, same semantics, same lifecycle. Its only distinguishing trait: the "author" on trust is Claude (the one teaching), not a book's author. So in a session note, Statements/Reminders are Claude's claims/rules on trust, while Insights/Protocols are still Juanes' verified output — the 2×2 still applies, just with Claude in the author slot instead of, say, Ousterhout.
+**A `/teach` session note (`2 - Input/Sessions/`, `#session`) is an input note like any other** — same six sections, same semantics, same lifecycle. Its only distinguishing trait: the "author" on trust is Claude (the one teaching), not a book's author. So in a session note, Statements/Heuristics are Claude's claims/rules on trust, while Insights/Protocols are still Juanes' verified output — the 2×2 still applies, just with Claude in the author slot instead of, say, Ousterhout.
 
 The note is a **lifecycle ledger, not an absorption artifact**: it spans both stages of learning (absorb, then process — per Rabbi Simon Jacobson's distinction). Absorption fills the trust row; gated sessions fill the verified row. "Don't rush processing" is a rule about which sections Juanes touches during consumption, not a separate template.
 
@@ -21,7 +21,7 @@ Sections are inventory bins in a 2×2 — **author's vs. Juanes'** × **claim vs
 
 | | Claim (descriptive) | Rule (actionable) |
 |---|---|---|
-| **Author's, on trust** | Statements | Reminders |
+| **Author's, on trust** | Statements | Heuristics |
 | **Juanes', verified** | Insights | Protocols |
 
 **Juanes is the processor; gated study sessions are the processing step.** Value flows from the trust column to the verified column through sessions — the note itself doesn't "process" anything. Insights/Protocols usually can't be traced to one specific Statement; don't add provenance ceremony.
@@ -31,7 +31,7 @@ Section names are **canonical and frozen** — exactly these six, identical in e
 ## Section semantics
 
 - **Statements** — the author's claims, in the author's words, selected by Juanes. For sources the AI knows, the selection is the signal (a map of his attention), not the content. For obscure sources, the content is also the signal — write to stand alone. On trust until tested.
-- **Reminders** — the author's actionable rules, pre-compressed 80/20. On trust. Provisional skill material until tested; **a Reminder that conflicts with a Protocol loses.**
+- **Heuristics** — the author's actionable rules, pre-compressed 80/20. On trust. Provisional skill material until tested; **a Heuristic that conflicts with a Protocol loses.**
 - **Questions** — the pending-verification log; the engine that moves items from trust to verified. Lifecycle: conceptual questions close only through a comprehension gate; short factual ones may close inline with a source or example. The answer lands where it belongs (Statement, Dictionary note, Zettel); the question is struck through with a link: `~~question~~ → [[answer-note]]`. The section stays a scannable list.
 - **Insights** — claims Juanes produced, verified by Claude on sight (per /teach). Verified knowledge; Zettel candidates. **No candidates**: unverified items never sit here marked "pending."
 - **Protocols** — actionable rules Juanes produced, verified against real code/systems in a gated session.
@@ -40,7 +40,7 @@ Section names are **canonical and frozen** — exactly these six, identical in e
 
 ## Parentheses: untracked marginalia
 
-Parenthetical text inside the author's row (Statements, Reminders) is Juanes' marginalia — reactions, extra context for himself or the AI (e.g., "(this connects with Zettel X)"). Rules:
+Parenthetical text inside the author's row (Statements, Heuristics) is Juanes' marginalia — reactions, extra context for himself or the AI (e.g., "(this connects with Zettel X)"). Rules:
 
 - **The harvest ignores parentheticals entirely.** They have no lifecycle and are never parsed, promoted, or tracked.
 - Anything that *does* have a lifecycle — a question needing an answer, an insight candidate, a rule worth adopting — must be promoted by Juanes into its proper section; parens are not a shadow inventory.
@@ -56,7 +56,7 @@ Manual only: Juanes points at an input note and asks for the skill. Priority ord
 
 1. **Protocols** (highest — verified rules; a skill's behavior comes from here first)
 2. **Insights** (verified claims)
-3. **Reminders** (provisional; include only where no Protocol/Insight covers the ground, and mark nothing as settled that only a Reminder supports)
+3. **Heuristics** (provisional; include only where no Protocol/Insight covers the ground, and mark nothing as settled that only a Heuristic supports)
 
 Statements are not skill material.
 
