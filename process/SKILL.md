@@ -5,7 +5,7 @@ description: Source of truth for Juanes' input-note template semantics (vault Te
 
 # /process — input-note semantics & harvest
 
-Version 2 — built 2026-07-10 as the book-note template (Version 1), generalized to all input media 2026-07-11 in the absorb/process grilling session. The template file (`vault/Templates/input.md`) holds only the structure; **this file is the single source of truth for what each section means and how to treat it.** If they ever disagree, this file wins and the template gets fixed.
+Version 2 — built 2026-07-10 as the book-note template (Version 1), generalized to all input media 2026-07-11 in the absorb/process grilling session; updated 2026-07-12 to reflect the template rename (book.md → input.md) and the addition of the `#session` medium tag, `Parent:` field, and `# Notes` section. The template file (`vault/Templates/input.md`) holds only the structure; **this file is the single source of truth for what each section means and how to treat it.** If they ever disagree, this file wins and the template gets fixed.
 
 ## Scope: one note per input resource
 
@@ -28,15 +28,28 @@ Sections are inventory bins in a 2×2 — **author's vs. Juanes'** × **claim vs
 
 Section names are **canonical and frozen** — exactly these six, identical in every input note. (One grandfathered exception: the "Statements and Interpretations" header in the Rabbi Jacobson lecture note stays as-is.)
 
+## Input note naming convention (hard rule, added 2026-07-12)
+
+Filename = `{{topic}}.md`. No date prefix (redundant with file metadata). No medium suffix like "(AI Session)" (redundant with the tag). If a note with the same name already exists, append a number: `Engineering Foundations (2).md`.
+
+## Editing boundaries (hard rule, added 2026-07-12)
+
+When creating or updating an input note, Claude may only write to: **Statements**, **Heuristics**, and **Notes** (Created/Updated). All other sections — Questions, Insights, Protocols, Counterarguments — belong to Juanes and must be left blank or untouched.
+
+**Parent notes (Dictionary entries) are never edited by Claude**, regardless of how outdated or incomplete they look. Only Juanes edits them.
+
 ## Section semantics
 
 - **Statements** — the author's claims, in the author's words, selected by Juanes. For sources the AI knows, the selection is the signal (a map of his attention), not the content. For obscure sources, the content is also the signal — write to stand alone. On trust until tested.
-- **Heuristics** — the author's actionable rules, pre-compressed 80/20. On trust. Provisional skill material until tested; **a Heuristic that conflicts with a Protocol loses.**
+- **Heuristics** — the author's actionable rules, pre-compressed 80/20. On trust. Over time and during processing sessions, Heuristics can be assembled into Protocols; provisional skill material until tested. **A Heuristic that conflicts with a Protocol must be reviewed — surface the conflict to Juanes and decide together what to do with it.**
 - **Questions** — the pending-verification log; the engine that moves items from trust to verified. Lifecycle: conceptual questions close only through a comprehension gate; short factual ones may close inline with a source or example. The answer lands where it belongs (Statement, Dictionary note, Zettel); the question is struck through with a link: `~~question~~ → [[answer-note]]`. The section stays a scannable list.
 - **Insights** — claims Juanes produced, verified by Claude on sight (per /teach). Verified knowledge; Zettel candidates. **No candidates**: unverified items never sit here marked "pending."
 - **Protocols** — actionable rules Juanes produced, verified against real code/systems in a gated session.
 - **Counterarguments** — semantics deliberately open until first real use. Do not plan or define it.
-- Anything else is freeform, per note, with no standard meaning.
+- **Notes / Created** — vault notes that were newly added to the git repo during this input session. List as wikilinks with folder path.
+- **Notes / Updated** — vault notes that were modified (already existed in the repo) during this input session. List as wikilinks with folder path.
+- **Parent** (frontmatter field) — wikilink to the Dictionary note this input belongs to. Enables hub-and-spoke topic aggregation: one Dictionary note links to all inputs (sessions, books, videos) on that topic.
+- Anything else is freeform, per input, with no standard meaning.
 
 ## Parentheses: untracked marginalia
 

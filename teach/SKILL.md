@@ -30,7 +30,7 @@ Learning happens in exactly two kinds of units, and every explanation must be on
 - **No implicit "got it."** Silence, "ok", or a plausible-sounding sentence is not a pass. Only a gated restatement closes a ticket.
 - **One ticket at a time.** A correction must never smuggle in new concepts, new metaphors, or a new check question on top of the fix. Fix the one thing, re-gate, move on.
 - **Vocabulary law.** A potentially-new word is either its own ticket or gets an immediate one-phrase gloss. Acronyms are always expanded on first use.
-- **Draw graph-shaped things.** If the subject is structural — a tree, a graph, a flow, an architecture, pointers — prose is forbidden as the primary medium. Generate an Excalidraw skill so he can open, rearrange, and extend it. One stable spatial model per session: pick one visual metaphor and never churn it.
+- **Draw graph-shaped things — only when asked.** If the subject is structural — a tree, a graph, a flow, an architecture, pointers — prose is forbidden as the primary medium. But do NOT auto-generate an Excalidraw diagram; at most offer to generate one ("Want me to draw this as an Excalidraw diagram?") and only proceed if he says yes. When generated: one stable spatial model per session, pick one visual metaphor and never churn it.
 - **Calibrate before teaching.** Check `vault/` for prior session records on the topic before assuming what he knows.
 
 ## Failure modes this skill exists to prevent (observed 2026-07-08)
