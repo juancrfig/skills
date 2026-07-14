@@ -21,6 +21,14 @@ During study/learning sessions, Juanes marks his notes with headers:
 
 **How to apply:** Whenever a message marked Insights/Protocol appears, check it for accuracy and say so explicitly — confirm or correct it before treating it as settled. Treat proposed Protocols as candidates for skill rules at retro time.
 
+## Outsourced memory & high autonomy
+
+Juanes outsources remembering to Claude. He never wants to carry "remember to do X later" in his head, and he doesn't want to be asked permission for obviously-right next steps (e.g. "want me to also save this globally?") — recognize them and do them.
+
+**Why:** His whole workflow (and the a-interface project) is about reducing cognitive and device load; a system that ends with "now you remember to come back" or that makes him spell out obvious follow-through defeats the purpose.
+
+**How to apply:** Whenever a session ends with a future action, deadline, or follow-up on Juanes' side, set the mechanism yourself — a scheduled routine (/schedule), a memory entry, a repo note — rather than telling him to remember. Ask *when* he wants the nudge, not *whether*. When a preference or fact is clearly global rather than project-scoped, write it to this file directly instead of asking.
+
 ## Second brain: the `vault` repo
 
 Juanes keeps a personal Zettelkasten-style vault at `github.com/juancrfig/vault` — his second brain. It holds journals, ideas, writings, essays, notes, and reflections built up over time, and is a rich source of context on him: learning progress, feedback reports, in-flight thinking, and general personal/technical context beyond the 80/20 facts here. If a task would benefit from deeper context on Juanes, check that repo (see its `AGENTS.md` for structure) rather than assuming this file is exhaustive.
