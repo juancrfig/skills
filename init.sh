@@ -57,7 +57,7 @@ else
     echo "skipped: vault memory/ link (pass --vault-path <path-to-vault-checkout> to enable)"
 fi
 
-for skill_dir in "$SKILLS_REPO"/*/; do
+for skill_dir in "$SKILLS_REPO"/*/ "$SKILLS_REPO"/.agents/skills/*/; do
     [ -f "${skill_dir}SKILL.md" ] || continue
 
     skill_name="$(basename "$skill_dir")"
