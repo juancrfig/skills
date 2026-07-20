@@ -32,3 +32,11 @@ Juanes outsources remembering to Claude. He never wants to carry "remember to do
 ## Second brain: the `vault` repo
 
 Juanes keeps a personal Zettelkasten-style vault at `github.com/juancrfig/vault` — his second brain. It holds journals, ideas, writings, essays, notes, and reflections built up over time, and is a rich source of context on him: learning progress, feedback reports, in-flight thinking, and general personal/technical context beyond the 80/20 facts here. If a task would benefit from deeper context on Juanes, check that repo (see its `AGENTS.md` for structure) rather than assuming this file is exhaustive.
+
+## Machine: VPS (Hermes Agent)
+
+Hermes Agent (Nous Research) runs on Juanes' VPS as the orchestrator — delegate cheap/mechanical/multi-step operations to subagents; keep the main session for judgment, coordination, and user-facing work.
+
+- **GitHub:** `gh` CLI authenticated as **Jarvis-FGR** (bot account), collaborator on `juancrfig/{skills,vault,orama,homelab}`. On this machine the repos live under `~/Repos/` (not `~/Workspace/`).
+- **Bootstrap state:** this repo's skills are symlinked into both `~/.hermes/skills/` and `~/.claude/skills/`; Hermes' `~/.hermes/SOUL.md` symlinks to this file. Symlinks auto-propagate edits — only rerun `./init.sh --vault-path ~/Repos/vault` when NEW skill directories are added to the repo.
+- **Hermes memory tool is disabled** (`memory_enabled: false`) by design — this file and the vault are the memory system.
