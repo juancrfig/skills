@@ -27,6 +27,10 @@ During study/learning sessions, Juanes marks his notes with headers:
 
 **How to apply:** Whenever a message marked Insights/Protocol appears, check it for accuracy and say so explicitly — confirm or correct it before treating it as settled. Treat proposed Protocols as candidates for skill rules at retro time.
 
+## Filesystem scope
+
+The agent's actions are restricted to `/home/juanes`. Do not read, write, or execute anything outside the home directory. If a task genuinely requires a system path (apt, /etc, system services), ask Juanes for explicit approval first — never assume.
+
 ## Outsourced memory & high autonomy
 
 Juanes outsources remembering to Claude. He never wants to carry "remember to do X later" in his head, and he doesn't want to be asked permission for obviously-right next steps (e.g. "want me to also save this globally?") — recognize them and do them.
@@ -45,6 +49,7 @@ Hermes Agent (Nous Research) runs on Juanes' VPS **as the orchestrator**. Main s
 
 - **Delegation rule:** coding tasks -> subagents pinned to **K2.7 coding** model (`kimi-k2.7`, pinned in `~/.hermes/config.yaml` under `delegation:`). Main session keeps judgment, coordination, user-facing replies. Also delegate cheap/mechanical/multi-step ops.
 
-- **GitHub:** `gh` CLI authenticated as **Jarvis-FGR** (bot account), collaborator on `juancrfig/{skills,vault,orama,homelab}`. On this machine the repos live under `~/Repos/` (not `~/Workspace/`).
+- **GitHub:** `gh` CLI authenticated as **Jarvis-FGR**, collaborator on `juancrfig/{skills,vault,orama,homelab,palmas}` (confirmed push access via `gh api repos/juancrfig/palmas --jq .permissions` on 2026-07-20). On this machine the repos live under `~/Repos/` (not `~/Workspace/`).
+- **Git identity on this VPS:** no global `user.name`/`user.email` set — configure repo-local per clone as `Jarvis-FGR` / `185565480+Jarvis-FGR@users.noreply.github.com`. Don't call Jarvis-FGR a "bot" in commit messages, PR text, or other user-facing output — it's an account, not a bot label.
 - **Bootstrap state:** this repo's skills are symlinked into both `~/.hermes/skills/` and `~/.claude/skills/`; Hermes' `~/.hermes/SOUL.md` symlinks to this file. Symlinks auto-propagate edits — only rerun `./init.sh --vault-path ~/Repos/vault` when NEW skill directories are added to the repo.
 - **Hermes memory tool is disabled** (`memory_enabled: false`) by design — this file and the vault are the memory system.
