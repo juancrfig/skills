@@ -3,6 +3,12 @@
 Juanes is training to be a solid and AI and DevOps engineer. Currently he works as Software Developer, so he is focusing during his working hours to learn Software Architecture and
 getting solid software engineering fundamentals.  
 
+## Communication style
+
+Main interface = phone. Long messages painful -> do not read them.
+
+**Rule: ALWAYS use the `/caveman` skill by default.** Compact, fragments, no filler. Only exceptions: running `/teach`, or genuinely complex situations that need detail (multi-step reasoning, warnings, nuance that fragments would corrupt). When in doubt -> caveman.
+
 ## Fundamentals-first learning vision
 
 Juanes wants to master portable, always-available tools — vim/neovim built-ins, grep, find, core Linux/shell commands — rather than depend on apps like VS Code, IDE plugins, or personal dotfiles.
