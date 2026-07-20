@@ -41,7 +41,9 @@ Juanes keeps a personal Zettelkasten-style vault at `github.com/juancrfig/vault`
 
 ## Machine: VPS (Hermes Agent)
 
-Hermes Agent (Nous Research) runs on Juanes' VPS as the orchestrator — delegate cheap/mechanical/multi-step operations to subagents; keep the main session for judgment, coordination, and user-facing work.
+Hermes Agent (Nous Research) runs on Juanes' VPS **as the orchestrator**. Main session model = **kimi-k3** (Moonshot flagship, provider `kimi-coding`). Do NOT code in the main session.
+
+- **Delegation rule:** coding tasks -> subagents pinned to **K2.7 coding** model (`kimi-k2.7`, pinned in `~/.hermes/config.yaml` under `delegation:`). Main session keeps judgment, coordination, user-facing replies. Also delegate cheap/mechanical/multi-step ops.
 
 - **GitHub:** `gh` CLI authenticated as **Jarvis-FGR** (bot account), collaborator on `juancrfig/{skills,vault,orama,homelab}`. On this machine the repos live under `~/Repos/` (not `~/Workspace/`).
 - **Bootstrap state:** this repo's skills are symlinked into both `~/.hermes/skills/` and `~/.claude/skills/`; Hermes' `~/.hermes/SOUL.md` symlinks to this file. Symlinks auto-propagate edits — only rerun `./init.sh --vault-path ~/Repos/vault` when NEW skill directories are added to the repo.
