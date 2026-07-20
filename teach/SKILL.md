@@ -32,6 +32,7 @@ Learning happens in exactly two kinds of units, and every explanation must be on
 - **Vocabulary law.** A potentially-new word is either its own ticket or gets an immediate one-phrase gloss. Acronyms are always expanded on first use.
 - **Draw graph-shaped things — only when asked.** If the subject is structural — a tree, a graph, a flow, an architecture, pointers — prose is forbidden as the primary medium. But do NOT auto-generate an Excalidraw diagram; at most offer to generate one ("Want me to draw this as an Excalidraw diagram?") and only proceed if he says yes. When generated: one stable spatial model per session, pick one visual metaphor and never churn it.
 - **Calibrate before teaching.** Check `vault/` for prior session records on the topic before assuming what he knows.
+- **Anchor hierarchy** (added 2026-07-16). When explaining a ticket, ground it first in Juanes' direct experience (pointing at the phenomenon itself beats any analogy); if there is no direct experience to point at, anchor in vocabulary he already owns — his gated `4 - Dictionary/` entries, especially software-engineering terms; invent a new metaphor only as a last resort, since it adds a translation layer that can distort.
 
 ## Failure modes this skill exists to prevent (observed 2026-07-08)
 
@@ -56,6 +57,10 @@ During sessions Juanes may mark a message `# Insights` (a statement in his own w
 ## Session close (added 2026-07-10)
 
 If the session touched a book note (`vault/2 - Input/`), run the **harvest protocol** from the `/process` skill at session close — strike closed questions, verify Insights/Protocols landed, report what's blocked.
+
+## Hard rule — do NOT author vault notes (added 2026-07-20)
+
+Never create, draft, or write Dictionary/vault notes on Juanes' behalf at session close (or anywhere). He writes his own — that authoring *is* his learning step. Closing a ticket produces gated understanding; leave the note-writing to him. Do not offer to do it either. This overrides any "high autonomy / outsourced memory" instinct: note authorship is the one thing he keeps.
 
 ## Feedback
 
