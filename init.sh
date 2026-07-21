@@ -57,7 +57,21 @@ else
     echo "skipped: vault memory/ link (pass --vault-path <path-to-vault-checkout> to enable)"
 fi
 
-for skill_dir in "$SKILLS_REPO"/*/ "$SKILLS_REPO"/.agents/skills/*/; do
+# Vendor the full Matt Pocock skills group at project level (symlinks,
+# default install scope for `add`). Best-effort: skip if npx is missing or
+# offline, since the repo's own top-level skills work fine without it.
+if command -v npx >/dev/null 2>&1; then
+    (cd "$SKILLS_REPO" && npx --yes skills@latest add mattpocock/skills --skill '*' -y) \
+        || echo "skipped: mattpocock/skills vendor install (npx failed, offline?)"
+else
+    echo "skipped: mattpocock/skills vendor install (npx not found)"
+fi
+
+# .agents/skills/*/ (vendored) is linked FIRST, then top-level */ SECOND,
+# so a repo-native skill always wins the name collision against a vendored
+# one (e.g. this repo's own customized teach/ over the generic vendored
+# .agents/skills/teach/).
+for skill_dir in "$SKILLS_REPO"/.agents/skills/*/ "$SKILLS_REPO"/*/; do
     [ -f "${skill_dir}SKILL.md" ] || continue
 
     skill_name="$(basename "$skill_dir")"
